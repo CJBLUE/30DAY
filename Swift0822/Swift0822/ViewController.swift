@@ -82,6 +82,10 @@ class ViewController: UIViewController {
     // MARK: 暂停方法
     func pauseAction() {
         print("pause");
+        // guard 判断不成立走else，成立跳过
+        guard self.timer.isValid else {
+            return;
+        }
         // 停止timer
         self.timer.invalidate();
     }
