@@ -42,7 +42,7 @@ class InputView: UIView, UITextViewDelegate{
         textV.delegate = self
         textV.font = UIFont.systemFont(ofSize: 20)
         
-        numberLabel = UILabel.init(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height-30, width: UIScreen.main.bounds.size.width, height: 30))
+        numberLabel = UILabel.init(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height-30-64, width: UIScreen.main.bounds.size.width, height: 30))
         numberLabel.textAlignment = NSTextAlignment.right
         numberLabel.text = String(format: "0/%d", max)
         self.addSubview(numberLabel)
@@ -80,7 +80,7 @@ class InputView: UIView, UITextViewDelegate{
         rect = dic[UIKeyboardFrameBeginUserInfoKey] as! CGRect
         // 动画改变位置
         UIView.animate(withDuration: dic[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
-            self.numberLabel.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height-30-rect.size.height, width: UIScreen.main.bounds.size.width, height: 30)
+            self.numberLabel.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height-30-64-rect.size.height, width: UIScreen.main.bounds.size.width, height: 30)
         }
     }
     
@@ -91,7 +91,7 @@ class InputView: UIView, UITextViewDelegate{
         dic = noti.userInfo as! Dictionary<String, Any>
         // 动画改变位置
         UIView.animate(withDuration: dic[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
-            self.numberLabel.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height-30, width: UIScreen.main.bounds.size.width, height: 30)
+            self.numberLabel.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height-30-64, width: UIScreen.main.bounds.size.width, height: 30)
         }
     }
     
