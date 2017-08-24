@@ -101,5 +101,4 @@ class InputView: UIView, UITextViewDelegate{
         // 这两种方法都可以
         //UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
-    
 }
